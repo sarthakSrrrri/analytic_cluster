@@ -46,6 +46,8 @@ services:
       <<: *image
       ports:
          - 9874:9874
+      volumes:
+         - ./data/recommendation:/data/source/recommendation:ro
       environment:
          <<: *common-config
          CORE-SITE.XML_hadoop.proxyuser.hadoop.hosts: "*"
